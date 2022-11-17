@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "4ee18093-91a7-4ad4-9861-28e130a8c2f5",
+		"name": "tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23896304"
+	},
+	"item": [
+		{
+			"name": "DepSearch1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/students/searchByDepartment?department=Computer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students",
+						"searchByDepartment"
+					],
+					"query": [
+						{
+							"key": "department",
+							"value": "Computer"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DepSearch1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/students/searchByDepartment?department=Computer",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"searchByDepartment"
+							],
+							"query": [
+								{
+									"key": "department",
+									"value": "Computer"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Nov 2022 18:17:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Dmitry Petrov\",\n        \"phoneNumber\": \"+79872593451\",\n        \"email\": \"Dmitry@gmail.com\",\n        \"visa\": null,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Russia\"\n        },\n        \"department\": {\n            \"id\": 2,\n            \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n        },\n        \"speciality\": {\n            \"id\": 1,\n            \"name\": \"Applied Informatics\",\n            \"department\": {\n                \"id\": 2,\n                \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n            }\n        }\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Nikolai Pratsenyuk\",\n        \"phoneNumber\": \"+71495345645\",\n        \"email\": \"Nikolai@gmail.com\",\n        \"visa\": null,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Russia\"\n        },\n        \"department\": {\n            \"id\": 2,\n            \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n        },\n        \"speciality\": {\n            \"id\": 3,\n            \"name\": \"Applied Mathematics\",\n            \"department\": {\n                \"id\": 2,\n                \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n            }\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "DepSearch2",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/students/searchByDepartment?department=Lobachevsky",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"searchByDepartment"
+							],
+							"query": [
+								{
+									"key": "department",
+									"value": "Lobachevsky"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Nov 2022 18:12:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Vasily Grachev\",\n        \"phoneNumber\": \"+79876541234\",\n        \"email\": \"Vasil@gmail.com\",\n        \"visa\": null,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Russia\"\n        },\n        \"department\": {\n            \"id\": 1,\n            \"name\": \"Lobachevsky Institute of Mathematics and Mechanics\"\n        },\n        \"speciality\": {\n            \"id\": 2,\n            \"name\": \"Computer Science\",\n            \"department\": {\n                \"id\": 1,\n                \"name\": \"Lobachevsky Institute of Mathematics and Mechanics\"\n            }\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "DepSearch3",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "DepSearch3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/students/searchByDepartment?department=Law",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"searchByDepartment"
+							],
+							"query": [
+								{
+									"key": "department",
+									"value": "Law"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Nov 2022 18:12:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "NameSearch1",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "NameSearch",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/students/searchByName?query=Nikola",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"searchByName"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Nikola"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Nov 2022 18:15:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Nikolai Pratsenyuk\",\n        \"phoneNumber\": \"+71495345645\",\n        \"email\": \"Nikolai@gmail.com\",\n        \"visa\": null,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Russia\"\n        },\n        \"department\": {\n            \"id\": 2,\n            \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n        },\n        \"speciality\": {\n            \"id\": 3,\n            \"name\": \"Applied Mathematics\",\n            \"department\": {\n                \"id\": 2,\n                \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n            }\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "NameSearch2",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "NameSearch2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/students/searchByName?query=Petrov",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"searchByName"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Petrov"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Nov 2022 18:16:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Dmitry Petrov\",\n        \"phoneNumber\": \"+79872593451\",\n        \"email\": \"Dmitry@gmail.com\",\n        \"visa\": null,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Russia\"\n        },\n        \"department\": {\n            \"id\": 2,\n            \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n        },\n        \"speciality\": {\n            \"id\": 1,\n            \"name\": \"Applied Informatics\",\n            \"department\": {\n                \"id\": 2,\n                \"name\": \"Institute of Computer Mathematics and Information Technologies\"\n            }\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}
