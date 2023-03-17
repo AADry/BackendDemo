@@ -22,7 +22,20 @@ public class UserServiceImpl  implements UserService {
 
     }
     public boolean isExists(User user){
-        if(userRepository.searchUser(user.getLogin()).size() >0) return true;
+        if(userRepository.searchUser(user.getLogin()) != null) return true;
         return false;
+    }
+
+    @Override
+    public void deleteUser(User user) {
+        userRepository.deleteUser(user.getLogin());
+    }
+
+    @Override
+    public void printUsers() {
+        System.out.println(userRepository.getAllUsers());
+    }
+    public int countUsers(){
+        return userRepository.getAllUsers().size();
     }
 }

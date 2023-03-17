@@ -9,10 +9,13 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
-    @Query( "SELECT s FROM User s WHERE " +
-            "s.login LIKE CONCAT('%', :query, '%')"
+    @Query( "SELECT u FROM User u WHERE " +
+            "u.login = :login"
     )
-    public List<User> searchUser(String query);
-
-
+    public User searchUser(String login);
+    @Query(value = "DELETE FROM users WHERE u.login = :login", nativeQuery = true)
+    public void deleteUser(String login);
+    @Query(value = "Select * From users",nativeQuery = true)
+    List<User> getAllUsers();
+    
 }

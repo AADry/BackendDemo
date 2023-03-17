@@ -8,4 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserService {
     @Transactional
     User saveUser(User user);
+    @Transactional
+    void deleteUser(User user);
+    void printUsers();
 }
