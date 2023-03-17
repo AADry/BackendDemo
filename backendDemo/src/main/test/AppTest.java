@@ -31,13 +31,15 @@ public class AppTest {
     @Transactional
     @Rollback(value = true)
     public void insertTest(){
-        User user = new User(1, "login", "password");
+        User user = new User( "login", "password");
         userService.saveUser(user);
     }
     @Test
+    @Transactional
+    @Rollback(value = true)
     public void userExistsTest(){
-        User user = new User(1, "login", "password");
-        User user2 = new User(1, "falseLogin", "password");
+        User user = new User( "login", "password");
+        User user2 = new User( "falseLogin", "password");
 
         assertEquals(true, user.getLogin().length() < 10 && user.getLogin().length() > 1);
         assertFalse(user.getLogin().contains("123") || user.getPassword().contains("~"));
