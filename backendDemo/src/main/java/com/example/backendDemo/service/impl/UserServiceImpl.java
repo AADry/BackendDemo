@@ -26,16 +26,20 @@ public class UserServiceImpl  implements UserService {
         return false;
     }
 
-    @Override
-    public void deleteUser(User user) {
-        userRepository.deleteUser(user.getLogin());
-    }
 
-    @Override
-    public void printUsers() {
-        System.out.println(userRepository.getAllUsers());
+    public void deleteUser(User user) {
+        userRepository.delete(user);
     }
-    public int countUsers(){
-        return userRepository.getAllUsers().size();
+    public void deleteAll(){
+        userRepository.deleteAll();
+    }
+    public void printUsers() {
+        System.out.println(userRepository.findAll());
+    }
+    public long countUsers(){
+        return  userRepository.count();
+    }
+    public long countAll(){
+        return userRepository.countAll();
     }
 }
