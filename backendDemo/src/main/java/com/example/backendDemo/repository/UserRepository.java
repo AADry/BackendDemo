@@ -14,7 +14,6 @@ public interface UserRepository extends JpaRepository<User,Long> {
             "u.login = :login"
     )
     public User searchUser(String login);
-    @Modifying
     @Query(value = "DELETE FROM users WHERE u.login = :login", nativeQuery = true)
     public void deleteUser(String login);
     @Query(value = "Select * From users",nativeQuery = true)

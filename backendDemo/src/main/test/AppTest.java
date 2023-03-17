@@ -3,19 +3,17 @@ import com.example.backendDemo.model.User;
 import com.example.backendDemo.service.impl.UserServiceImpl;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.event.annotation.AfterTestMethod;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
-import javax.transaction.Transactional;
 import java.sql.SQLException;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -29,29 +27,27 @@ public class AppTest {
     DataSource dataSource;
     @Autowired
     UserServiceImpl userService;
-
-
-    @Before
-    @Test
+    @BeforeEach
     public void setUp() {
         for (int i = 0; i < 21; i++) {
-            userService.saveUser(new User("uLogin","uPassword"));
+            User user = new User("login", "password");
+            userService.saveUser(user);
         }
 
     }
-
     @Test
-    public void printAllUsers(){
+    public void printUsersTest(){
         userService.printUsers();
+        System.out.println();
     }
     @Test
-    public  void countUsersTest(){
-        System.out.println("Количество пользователей = " + userService.countUsers());
+    public void countUsersTest(){
+        System.out.print("Количество пользователей = " + userService.countUsers());
+        System.out.println();
     }
-    @After
-    @Test
+
+    @AfterEach
     public void cleanUp(){
         userService.deleteAll();
-        System.out.println("Количество пользователей = " + userService.countUsers());
     }
 }

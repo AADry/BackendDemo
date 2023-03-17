@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class UserServiceImpl  implements UserService {
@@ -34,7 +36,8 @@ public class UserServiceImpl  implements UserService {
         userRepository.deleteAll();
     }
     public void printUsers() {
-        System.out.println(userRepository.findAll());
+        List<User> users = userRepository.findAll();
+        System.out.println(users);
     }
     public long countUsers(){
         return  userRepository.count();
